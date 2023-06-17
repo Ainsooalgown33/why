@@ -1,0 +1,529 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOTYPE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <style>
+        /* Reset default margin and padding */
+    body, ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* .text{
+        font-size: 22px;
+    }
+    .text:hover{
+        cursor: pointer;
+        color: purple;
+    } */
+    
+    /* Header styles */
+
+    
+    header {
+        margin-top: 30px;
+        height: 400px;
+        /* background: blue;
+        color: #fff;
+        padding: 10px; */
+        background-image: url(../pic/seed.avif);
+        /* background-size: cover; */
+        background-size: 100% 100%;
+        color: #fff;
+        padding: 10px;
+    }
+    /* .fix{
+        position: fixed;
+    } */
+    
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    
+    nav .logo img {
+        width: 80px;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        font-size: 22px;
+        color: black;
+        text-decoration: none;
+    }
+    nav ul li a:hover{
+        color: #5cb874;
+    }
+    
+    button{
+        border: 2px solid #5cb874;
+        border-radius: 6px;
+        background-color: #ffff;
+        height: 30px;
+        cursor: pointer;
+        width: 100px
+    }
+    button:hover{
+        border: 1px solid black;
+        background-color: #000;
+        color: #fff;
+        background-color:#5cb874;;
+    }
+    /* .search-bar input[type="text"] {
+        width: 600px;
+        padding: 5px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+    nav .search-bar:hover{
+        color: lime;
+        background-color: purple;
+        cursor: pointer;
+    } */
+    .slider {
+          width: 800px;
+          height: auto;
+          overflow: hidden;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 30px;
+          
+        }
+        
+        .slider ul {
+          list-style: none;
+          width: 3200px;
+          padding: 0;
+          margin: 0;
+          animation: slide-animation 15s infinite;
+        }
+        
+        .slider ul li {
+            margin-top: 100px;
+          width: 800px;
+          float: left;
+          text-align: center;
+        }
+        
+        @keyframes slide-animation {
+          0%, 20% {
+            margin-left: 0;
+          }
+          25%, 45% {
+            margin-left: -800px;
+          }
+          50%, 70% {
+            margin-left: -1600px;
+          }
+          75%, 95% {
+            margin-left: -2400px;
+          }
+        }
+    
+    .cta-btn {
+        padding: 10px 20px;
+        background: silver;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    .carry{
+        font-size: larger;
+        font-style: italic;
+    }
+    
+    /* Content section styles */
+    .content {
+        padding: 40px;
+    }
+    
+    .content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .movie-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .line{
+        border: 4px solid;
+    }
+    
+    .movie {
+        width: 500px;
+        margin-bottom: 20px;
+    }
+    
+    .movie img {
+        width: 300px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    .movie h3 {
+        font-size: 16px;
+    }
+    
+    /* Enjoy Your TV section styles */
+    .enjoy-your-tv {
+        background: #5cb874;
+        color: #fff;
+        padding: 80px 0;
+    }
+    
+    .enjoy-your-tv h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    
+    .enjoy-your-tv p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .devices {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .huge{
+        font-size: 30px;
+    }
+    
+    .devices img {
+        width: 400px;
+        margin: 0 10px;
+    }
+    
+    /* Download Shows to Watch Offline section styles */
+    .download-offline {
+        background: #f5f5f5;
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .download-offline h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    
+    .download-offline p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .download-offline img {
+        width: 600px;
+        margin-top: 40px;
+    }
+    
+    .marketing{
+        font-style: italic;
+        /* background-color: #5cb874; */
+        color: #6c757d;
+        font-size: 22px;
+        text-align: center;
+    }
+    .marketing img {
+        width: 1000px;
+        margin-top: 40px;
+        border: 1px solid black;
+    }
+    
+    .about-us{
+        background: #f5f5f5;
+        padding: 80px 0;
+        text-align: center;
+    }
+
+    .swiper-container {
+            width: 100%;
+            
+        }
+
+        .swiper-slide img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+        }
+  /* ...existing styles... */
+
+
+  .citadel{
+    color: #5cb874;
+  }
+  .export{
+    font-style: italic;
+        /* background-color: #5cb874; */
+        color: #6c757d;
+        font-size: 22px;
+        text-align: center;
+  }
+  .fles{
+    font-style: italic;
+    color: #5cb874;
+    
+  }
+  @media screen and (max-width: 480px) {
+  /* Styles for screens up to 480px (e.g., smartphones) */
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* Styles for screens between 481px and 768px (e.g., tablets) */
+}
+
+@media screen and (min-width: 769px) {
+  /* Styles for screens larger than 768px (e.g., desktops) */
+}
+footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+        .cess {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px; /* Adjust this value as needed */
+}
+.contact-section{
+    margin-left: 500px;
+    width: 500px;
+    box-shadow: #6c757d 0 2px 5px;
+}
+</style>
+
+        
+    
+    </style>
+</head>
+<body>
+    <nav class="fic">
+        <div class="citadel">
+            <h1>GLOBAL RESOURCES CITADEL LIMITED</h1>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#logo">Home</a></li>
+                <li><a href="#about-us">About</a></li>
+                <li><a href="#export">Services</a></li>
+                <!-- <li><a href="#download-offline">Team</a></li> -->
+                <li><a href="#contact-section">Contacts</a></li>
+            </ul>
+        </div>
+        <div class="search-bar">
+            <button>Get Started</button>
+        </div>
+    </nav>
+    
+    <header>
+        <!-- <nav>
+            <div class="logo">
+                <h1>DEAPZA</h1>
+            </div>
+            <div class="menu">
+                <ul class="text">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">services</a></li>
+                    <li><a href="#">team</a></li>
+                    <li><a href="#">contacts</a></li>
+                </ul>
+            </div>
+            <div class="search-bar">
+                <button>Get Started</button>
+            </div>
+        </nav> -->
+        <div class="slider">
+            <ul>
+              <li>WE are Global Resources Citadel Ltd</li>
+              <li>We are a leading Agricultural Company in Nigeria that specialices in a Comprehensive Mechanised Farming, Manufacturing and Contrsuction Services. </li>
+              <li>We are machinery producers, seed and agrichemical manufacturers, food processing as well as farmer"s cooperatives.</li>
+              <li>Global resources Ltd also encompasses works ranging from Agriculture to Construction, Oil and Gas and Real estate.</li>
+            </ul>
+            <hr class="flint">
+          </div>
+    </header>
+    <hr class="line" style="color: #5cb874;">
+
+    <section id="about-us" class="about-us">
+        <div class="container">
+            <h2 class="huge">ABOUT US.</h2>
+            <hr class="net">
+            <p class="carry">To carry On The Business of Agricultural Farming. Agro Allied Services, Manufacture For Use And For Sale Of animal Feeds of all kinds and description and to carry on business as Manufacturers' Agents or representatives, General merchants, Packers and distributors of and dealers in all classes and description of  Animal Feeds, produce Goods, LIvestock Merchandise, Fertilizers, veterinary and Farming Equipment; And all other Products of all Farm produce. </p>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../pic/images (1).jpeg" alt="Image 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../pic/ind.jpeg" alt="Image 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../pic/images.jpeg" alt="Image 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="line" style="color: #5cb874;">
+    </section>
+    
+    <section class="marketing">
+        <div class="container">
+            <h2 class="fles">BUSINESS AIMS.</h2>
+            <p>To engage in the business of Engineering constructions, roads & bridges, Rail-roads, building, electrical/electronics, estate developers, management, construction of dams, mining, dredging, quarry, manufacturing of steel, servicing and repairing or steel factories, Earth movable and immovable machine/ engine engineering. Importing and exporting of construction materials, building materials, engine parts and equipments </p>
+                <p> In line with our mandate of providing premium markets for smallholder farmers, we have networks of credible off-takers in four continents with the capacity to buy from our onboarded smallholder farmers</p>
+
+            <img src="../pic/images (2).jpeg" class="etf" style="width: 300px; height: 300px;">
+            <img src="../pic/images (3).jpeg" class="etf" style="width: 300px; height: 300px;">
+            <img src="../pic/images (4).jpeg" class="etf" style="width: 300px; height: 300px;">
+            <img src="../pic/images (5).jpeg" class="etf" style="width: 300px; height: 300px;">
+            <img src="../pic/images (6).jpeg" class="etf" style="width: 300px; height: 300px;">
+            <img src="../pic/sit.jpeg" class="etf" style="width: 300px; height: 300px;">
+        </div>
+    </section>
+    <hr>
+
+    <section id="export" class="export">
+        <div class="container">
+            <h2 class="fles">IMPORTING, EXPORTING AND AGRICULTURE.</h2>
+            <p>We carry on the business of import, export and agricultural marketing (whether or not manufactured in whole or in part) and trade both agricultural and non agricultural raw materials to the world</p>
+                <p> In line with our mandate of providing premium markets for smallholder farmers, we also pride ourselves in farmhouse and other agricultural buildings construction with top notch agricultural machinaries.</p>
+
+        </div>
+    </section>
+
+    <section class="content">
+        <h2>Popular Works</h2>
+        <div class="movie-list">
+            <div class="movie">
+                <img src="../pic/download.webp" alt="" style="width: 300px; height: 300px;">
+                <h3>Pen house construction</h>
+                    <hr class="tall">
+            </div>
+            <div class="movie">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4GlFuJn3BsernKtyLM7VCao3AGfHMAqkyZA&usqp=CAU" alt="Movie 2" style="width: 300px; height: 300px;">
+                <h3>Farming Site</h3>
+                <hr>
+            </div>
+            <div class="movie">
+                <img src="../pic/markeet.jpg" alt="Movie 3" style="width: 300px; height: 300px;">
+                <h3>Agricultural Marketing</h3>
+                <hr>
+            </div>
+            <div class="movie">
+                <img src="../pic/feeder.jpg" alt="Movie 3" style="width: 300px; height: 300px;">
+                <h3>Feeder</h3>
+                <hr>
+            </div>
+        </div>
+    </section>
+    <section class="enjoy-your-tv">
+        <div class="container">
+            <h2>GLOBAL RESOURCES CITADEL LIMITED..</h2>
+            <p>GLOBAL RESOURCES CITADEL LIMITED is a service providing organization ranging from Manufacturing, Distribution, Marketing and processing of all agricultural and not agricultural produce.
+                We are Importers, exporters and distributor of agro allied products in all quantities.
+                We render Agro-consultancy and other agricultural services.</p>
+            <div class="devices">
+                <img src="../pic/logo-removebg-preview.png" alt="Device 1" style="width: 200px;">
+                <!-- <img src="" alt="Device 2">
+                <img src="device3.png" alt="Device 3">
+                <img src="device4.png" alt="Device 4"> -->
+            </div>
+        </div>
+    </section>
+    <!-- <section id="download-offline" class="download-offline">
+        <div class="container">
+            <h2>OUR COMMITMENT.</h2>
+            <p>Economic boosters to performance.
+                Enhanced Animal produce and product production.
+                To provide the best reasonable control of health and safety risks arising from business activities.</p>
+            <img src="../pic/man.jpg" alt="Download Icon">
+        </div>
+    </section> -->
+   
+    <section id="contact-section" class="contact-section">
+        <h2 class="cess" style="color: #5cb874; font-size: 50px; font-style: italic;">Contact</h2>
+        <hr style="color: #5cb874; border: 2px solid;">
+        <div class="contact-info">
+            <h3 class="cent" style="font-size: 40px; font-style: italic; color: black; margin-left: 130px;"><i class="fas fa-map-marker-alt"></i> Location</h3>
+            <p style="font-style: italic; color: #6c757d; font-size: 25px; margin-left: 10px;"><i class="fas fa-map-marker-alt"></i> First floor, Back flat, Gbemisola House, Adjacent Omole Phase 1 Main gate,</p>
+            <p style="font-style: italic; color: #6c757d; font-size: 25px;margin-left: 10px;"><i class="fas fa-map-marker-alt"></i>  Ogba, Lagos, Nigeria</p>
+            <h3 style="font-size: 40px; font-style: italic; color: black; margin-left: 130px;"><i class="fas fa-envelope"></i>Email:</h3>
+            <p><a href="mailto:Globalresources@myyahoo.com" style="font-style: italic; color: #5cb874; font-size: 25px; margin-left: 10px;"><i class="fas fa-envelope"></i> Globalresources@myyahoo.com</a></p>
+            <a href="mailto:Globalresources@gmail.com" style="font-style: italic; color: #5cb874; font-size: 25px; margin-left: 10px;"><i class="fas fa-envelope"></i> Globalresources@gmail.com</a>
+            <h3 style="font-size: 40px; font-style: italic; color: black; margin-left: 130px;"><i class="fas fa-phone"></i>Call:</h3>
+            <p style="font-style: italic; color: #6c757d; font-size: 25px; margin-left: 10px;"><a href="tel:+447404138158" style="font-style: italic; color: #5cb874; font-size: 25px;"><i class="fas fa-phone"></i> +447404138158</a></p>
+            <p style="font-style: italic; color: #6c757d; font-size: 25px; margin-left: 10px;"><a href="tel:+2349131405288" style="font-style: italic; color: #5cb874; font-size: 25px;"><i class="fas fa-phone"></i> +2349131405288</a></p>
+            <p style="font-style: italic; color: #6c757d; font-size: 25px; margin-left: 10px;"><a href="tel:+2349154109225" style="font-style: italic; color: #5cb874; font-size: 25px;"><i class="fas fa-phone"></i> +2349154109225</a></p>
+        </div>
+    </section>
+    
+    
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <footer>
+        <p>&copy; 2023 GLOBAL RESOURCES CITADEL LIMITED. All rights reserved.</p>
+        <p>Designed by CAPED BALDY</p>
+    </footer>
+</body>
+</html>
+
+    
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script> -->
+</body>
+</html>
